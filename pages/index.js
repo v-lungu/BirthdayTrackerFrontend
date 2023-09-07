@@ -1,15 +1,35 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from "next/head";
+import SeeAll from "../components/SeeAll";
 
 export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+  const getToday = async () => {
+    try {
+      const res = await fetch(`http://localhost:7777/api/birthdays/today`);
+      const data = await res.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
-      <main>
+  const getUpcoming = async () => {};
+  const addBirthday = async () => {};
+
+  return (
+    <>
+      <Head>
+        <title>Birthday Tracker</title>
+      </Head>
+      <main className="text-dark w-full h-[80%]">
+        <div className="grid grid-rows-4 grid-cols-3 gap-10 h-full p-8">
+          <div className="row-span-2 col-span-2 ">1</div>
+          <div className="row-span-3 col-span-1 ">2</div>
+          <div className="row-span-2 col-span-2 ">3</div>
+          <SeeAll className="row-span-1 col-span-1"></SeeAll>
+        </div>
+      </main>
+
+      {/* <main>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -55,7 +75,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
         </a>
       </footer>
@@ -109,7 +129,7 @@ export default function Home() {
         * {
           box-sizing: border-box;
         }
-      `}</style>
-    </div>
-  )
+      `}</style> */}
+    </>
+  );
 }

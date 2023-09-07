@@ -1,1 +1,1 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is the frontend portion of my birthday tracker app. This app shows current and upcoming birthdays, allowing me to add and edit these birthdays. I put this together because now that I no longer use Facebook I've been forgetting my friend's birthdays so setting this up with an email notification system will hopefully keep me on top of it.
